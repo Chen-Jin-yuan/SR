@@ -415,8 +415,7 @@ class MyWindow(object):
         self.timer.timeout.connect(self.showtime)  # 这个通过调用槽函数来刷新时间
         self.timer.start(1000)  # 1s刷新一次
 
-        self.Showimg = Thread(target=self.showimg)
-        self.Multi= Thread(target=self.multi)
+        
 
     def getinfo(self):
         file=QFileDialog()#创建文件对话框
@@ -424,6 +423,7 @@ class MyWindow(object):
         if file.exec_():#如果选择了文件
             imgPath=file.selectedFiles()[0]#获取文件
             if imgPath.endswith("png") or imgPath.endswith("jpg"):
+                self.Showimg = Thread(target=self.showimg)
                 self.statusbar.showMessage("重建中...", 0)
                 self.label.setPixmap(QtGui.QPixmap(imgPath))
                 self.label_4.setPixmap(QtGui.QPixmap("logo.png"))
@@ -576,6 +576,8 @@ class MyWindow(object):
         self.statusbar.showMessage("重建完毕,  用时:" + str(time.time() - start)+"s,   输出图像在img_superR文件夹下", 0)
         self.label_6.setText("重建完毕,用时:" +str(int(time.time() - start))+"s,结果在img_superR文件夹")
     def multiimg(self):
+  
+        self.Multi= Thread(target=self.multi)
         self.statusbar.showMessage("重建中，请勿退出...请留意输出文件夹！", 0)
         self.label.setPixmap(QtGui.QPixmap("logo.png"))
         self.label_4.setPixmap(QtGui.QPixmap("logo.png"))
