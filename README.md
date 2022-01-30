@@ -1,6 +1,7 @@
 # SR_Generator
 **超分辨率重建：**
 使用预训练好的SRGAN深度神经网络和SRResnet深度神经网络，能对低分辨率的图像重建为超分辨率图像，对纹理的构建尤为明显。
+
 ![8e1bb5b81a5065cc98f125879ab1f51](https://user-images.githubusercontent.com/78554147/151700461-07d3f495-df84-4fbb-b406-ed569ab42a20.jpg)
 ![4b70ae22329c248d2e5ab01e854c95f](https://user-images.githubusercontent.com/78554147/151700481-a8b19e4f-5f9d-469c-adac-eb1316a17012.png)
 
